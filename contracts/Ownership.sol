@@ -13,6 +13,23 @@ contract Ownership is AssetBase , ERC721 {
     function Ownership(string _name,string _symbol) public {
         name=_name;
         symbol=_symbol;
+        Asset memory _asset = Asset(
+        {
+        creationTime: uint64(now),
+        assetStatus: 0,
+        assetHash: "",
+        personalisedMessage: "",
+        assetType:0
+        });
+
+        uint256 newAssetId = assets.push(_asset) - 1;
+        require(newAssetId == uint256(uint32(newAssetId)));
+        // transfers newly generated locks to ceoaddress
+        _transfer(0,msg.sender,newAssetId);
+
+        // fire event
+        AssetCreated(_asset.assetHash,newAssetId,_asset.personalisedMessage,0,0);
+
     }
     /**events*/
     event Approval(address from, address to, uint256 _tokenId);
