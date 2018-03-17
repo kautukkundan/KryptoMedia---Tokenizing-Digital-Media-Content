@@ -30,7 +30,7 @@ app.use(express.static(__dirname+"/public"));
 app.set("view engine","ejs");
 
 app.get('/token',function(req,res){
-    res.render('upload.ejs');
+    res.render('upload.html');
 })
 
 app.get('/',function (req, res) {
