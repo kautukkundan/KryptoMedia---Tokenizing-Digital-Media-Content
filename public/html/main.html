@@ -22,30 +22,61 @@
 <body style="background-color:black">
     <h1 style="color:#F0E68C"><center>STORE</center></h1>
     <h2 style="color:#F0E68C;margin:0.5em">BOOKS</h2>
-    <div class="zoom" style="float:left;margin:0.5em;">
+    <div class="zoom" style="float:left;margin:0.5em;" onclick="pdf()">
         <img src="../icons/book1.jpg" height="200" width="150">
         
     </div>
 
-    <div class="zoom" style="float:left;margin:0.5em;">
+    <div class="zoom" style="float:left;margin:0.5em;" onclick="pdf()">
         <img src="../icons/book2.jpg" height="200" width="150">
         
     </div>
 
     <div class="zoom" style="margin:0.5em;">
-        <img src="../icons/book3.jpg" height="200" width="150">
+        <img src="../icons/book3.jpg" height="200" width="150" onclick="pdf()">
         
     </div>
     
     <h2 style="color:#F0E68C;margin:0.5em">MUSIC</h2>
     <div class="zoom" style="float:left;margin:0.5em;">
-        <img src="../icons/music1.jpg" height="200" width="150">
+        <img src="../icons/music1.jpg" height="200" width="150" onclick="music()">
         
     </div>
 
     <div class="zoom" style="margin:0.5em;">
-        <img src="../icons/music2.jpg" height="200" width="150">
+        <img src="../icons/music2.jpg" height="200" width="150" onclick="music()">
         
     </div>
 
+    <h2 style="color:#F0E68C;margin:0.5em">IMAGES</h2>
+    <div class="zoom" style="float:left;margin:0.5em;">
+        <img src="../icons/music1.jpg" height="200" width="150" onclick="img()">
+        
+    </div>
+
+    <div class="zoom" style="margin:0.5em;">
+        <img src="../icons/music2.jpg" height="200" width="150" onclick="img()">
+        
+    </div>
+    <script>
+        function img(){
+        window.open("../icons/music1.jpg");
+         }
+    
+
+    function music(){
+        var audio = new Audio('../files/music.mp3');
+        audio.play();
+    }
+
+    function pdf(){
+        var iframe = document.createElement('iframe');
+        iframe.src ='../files/pdf.pdf';
+        iframe.download;
+        iframe.width='500px';
+        iframe.height='500px';
+        document.getElementsByTagName('body')[0].appendChild(iframe);
+    }
+
+    </script>
 </body>
