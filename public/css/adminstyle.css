@@ -1,0 +1,10 @@
+  body {
+    margin: 0;
+    background: url('/images/bg2.png') no-repeat fixed right top;
+    background-size: cover;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .page-container {
+    max-width: 97vw;
+  }
