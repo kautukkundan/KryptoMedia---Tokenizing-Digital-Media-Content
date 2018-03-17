@@ -8,6 +8,8 @@
 	<button onclick='<%= clickhandler %>'>Getfile</button>
 	<script>
 		function createFileFromHex(cleaned_hex, filename) {
+			console.log("I am here");
+
 			if (cleaned_hex.length % 2) {
 				alert ("Error: cleaned hex string length is odd.");
 				return;
