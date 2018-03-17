@@ -17,6 +17,7 @@ contract AssetBase {
     struct Asset {
         string assetHash;
         uint64 creationTime;
+        uint256 assetType;
         // status means onrent, for sale , locked , unlocked and more 
         // for now lets assume , 0 is the default , unlocked,unrented,notonsale
         // 2 means on sale 

@@ -6,6 +6,6 @@ contract Core is Ownership {
     function Core() {
         // Starts paused.
         //TODO see what to put here 
-
+        
     }
 }
