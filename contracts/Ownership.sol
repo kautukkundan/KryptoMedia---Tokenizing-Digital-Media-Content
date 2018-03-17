@@ -9,11 +9,12 @@ contract Ownership is AssetBase , ERC721 {
     string public  name ;
     string public  symbol ;
 
+
     function Ownership(string _name,string _symbol) public {
         name=_name;
         symbol=_symbol;
     }
-    /**events  */
+    /**events*/
     event Approval(address from, address to, uint256 _tokenId);
     
     
