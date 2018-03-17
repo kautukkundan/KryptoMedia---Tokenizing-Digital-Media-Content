@@ -20,13 +20,19 @@ function encrypt(file){
 }
 
 
+app.get('/file/:id', function(req, res){
+  encrypt(req.params.id);
+});
+
+
+
 app.use(express.static(__dirname+"/public"));
 app.set("view engine","ejs");
 
 
 app.get('/',function (req, res) {
 
-  res.render("main")
+  res.render("main", {encrypt})
     // console.log(coa);
     // //Encrypt
     
@@ -47,27 +53,39 @@ app.get('/',function (req, res) {
   //   res.render("index",{clickhandler : "createFileFromHex("+"'"+ coa +"'"+", 'rikki.png')"});
   // }
 
-   var coa = fs.readFileSync('./files/COA.png').toString("hex");
-   console.log(coa);
-   //Encrypt
-    var encrypted = CryptoJS.AES.encrypt(coa, '12334');
-   // Decrypt
-    var bytes  = CryptoJS.AES.decrypt(encrypted.toString(), '12334');
-    console.log(bytes.toString(CryptoJS.enc.Utf8));
-    if(coa===bytes.toString(CryptoJS.enc.Utf8)){
-        console.log("hurray!!!");
-        fs.appendFile('./files/COA.txt',coa, function (err) {
-            if (err) {
-                // append failed
-            } else {
-                // done
-            }
-        })
+   // var coa = fs.readFileSync('./files/COA.png').toString("hex");
+   // console.log(coa);
+   // //Encrypt
+   //  var encrypted = CryptoJS.AES.encrypt(coa, '12334');
+   // // Decrypt
+   //  var bytes  = CryptoJS.AES.decrypt(encrypted.toString(), '12334');
+   //  console.log(bytes.toString(CryptoJS.enc.Utf8));
+   //  if(coa===bytes.toString(CryptoJS.enc.Utf8)){
+   //      console.log("hurray!!!");
+   //      fs.appendFile('./files/COA.txt',coa, function (err) {
+   //          if (err) {
+   //              // append failed
+   //          } else {
+   //              // done
+   //          }
+   //      })
+   //  }
+   //  if(coa===bytes.toString())
+   //  res.render("index",{clickhandler : "createFileFromHex("+"'"+coa+"'"+", 'rikki.png')"});
+
+
+ });
+
+app.post('/upload', function (req, res) {
+  fs.appendFile('/files', req.body, function(err){
+    if(err){
+
     }
-    if(coa===bytes.toString())
-    res.render("index",{clickhandler : "createFileFromHex("+"'"+coa+"'"+", 'rikki.png')"});
+    else {
 
-
+    }
+  });
+  res.redirect("/")
 });
 
 app.listen(3000,function () {
