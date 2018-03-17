@@ -77,7 +77,7 @@ app.get('/',function (req, res) {
  });
 
 app.post('/upload', function (req, res) {
-  fs.appendFile('/files', req.body, function(err){
+  fs.appendFile('./files', req.body, function(err){
     if(err){
 
     }
