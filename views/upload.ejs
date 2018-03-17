@@ -44,6 +44,9 @@
         <div class="title">
           <a href="/up">UPLOAD</a>
         </div>
+        <div class="title">
+          <a href="/transfer">TRANSFERS</a>
+        </div>
 
       </div>
 
@@ -70,78 +73,83 @@
 
         <br>
 
-        <div class="divider">UPLOAD YOUR CONTENT</div>
+        <div class="divider">CREATE ASSET</div>
 
         <div class="row">
 
           <!-- ROW STARTS -->
 
-          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
-            <div class="card" style="border: none; padding: 0;">
-              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 20vh">
-                <br><br>
-                UPLOAD AND GET TOKEN NOW! 
-              </div>
-            </div>
+          <div class="col-4 text-left search">
+            <input type="search" class="search" name="token-id" placeholder="TOKEN-NAME" id="token-name">
           </div>
+          <div class="col-4 text-left search">
+            <input type="search" class="search" name="symbol" placeholder="TOKEN-SYMBOL" id="symbol">
+          </div>
+          
+            <br><br>
+            <button class="btn btn-primary" style="width: 10vw; margin: auto;"  onclick="createAsset(symbol, name)">GO</button>
+          
 
-    
+        </div>
+        <!-- ROW ENDS -->
+        <br><br>
+        <div class="divider">GENERATE YOUR CONTENT</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+          <div class="col-4 text-left search">
+            <input type="search" class="search" name="to" placeholder="TOKEN-SYMBOL" id="token-symbol">
+          </div>
+          <div class="col-4 text-left search">
+            <input type="search" class="search" name="token-id" placeholder="ASSET TYPE" id="asset-type">
+          </div>
+          <div class="col-4 text-left search">
+                <input type="search" class="search" name="token-id" placeholder="HASH" id="hash">
+              </div>
+          <div class="col-4 text-left search">
+            <input type="search" class="search" name="symbol" placeholder="MESSAGE" id="message">
+          </div>
 
           
         </div>
 
         <!-- ROW ENDS -->
+        <br><br>
+        <button class="btn btn-primary" style="width: 10vw; margin: auto;">GO</button>
+          
 
+        <!-- ROW ENDS -->
       </div>
 
-      <!-- MAIN BODY ENDS -->
+      <!-- ROW ENDS -->
 
     </div>
 
-
-    <!-- ALL MODALS -->
-
-    <div class="modal fade" id="Microsoft" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="padding: 0">
-        <div class="modal-content">
-          <div class="modal-body">
-
-            <h4 class="text-center">Microsoft Campus Hackathon 1.0</h4>
-            <div class="text-center"> <i class="fa fa-clock-o" aria-hidden="true"></i>Feb 3, 2018 - Feb 4, 2018</div>
-            <div class="text-center">
-              <i class="fa fa-map-marker" aria-hidden="true" style="padding: 5px"></i>
-              Galgotias College of Engineering and Technology, Greater Noida
-            </div>
-            <br>
-
-            <img src="https://hacksociety.tech/assets/img/events/31.png" style="max-width: 100%">
-
-            <br>
-
-            <p style="margin-top: 2vh">
-              We are organizing the first edition of Microsoft Campus Hackathon at Galgotias College of Engineering and Technology. MCH Hack 1.0 is a platform for developers, designers and inventors to code, design and hack some amazing solution for real-world problem. Whether we are the first time coders or a pro come join us, build something amazing. We will provide you food, swags and fun to have an amazing weekend. We can not wait to see what you build at the hackathon.
-            </p>
-
-            <p>
-              ☻ Log on to our website http://mchgalgotias.tech for more details about theme.
-            </p>
-
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Visit link</button>
-          </div>
-        </div>
-      </div>
-    </div>
+    <!-- MAIN BODY ENDS -->
 
   </div>
 
+  <!-- ALL MODALS -->
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</div>
+
+<script type="text/javascript">
+  
+  var symbol = document.getElementById('symbol').value
+  var name = document.getElementById('token-name').value
+
+  function test(symbol, name) {
+    console.log(symbol)
+  }
+
+</script>
+
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html> 
