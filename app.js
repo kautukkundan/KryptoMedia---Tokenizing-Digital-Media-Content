@@ -70,6 +70,9 @@ app.get('/up',function (req, res) {
   res.render("upload")
 });
 
+app.get('/tansfer',function (req, res) {
+  res.render("transfer")
+});
 
 app.listen(3000,function () {
  console.log("HINT started on port 3000");
