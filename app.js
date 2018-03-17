@@ -3,15 +3,15 @@ var app         =   express();
 var fs = require('fs');
 var CryptoJS = require("crypto-js");
 var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
+var upload = multer({ dest: 'tmp/' })
 
-function encrypt(file){
+function encrypt(file, org){
 
-  var toBeEnc = fs.readFileSync(file).toString("hex");
+  var toBeEnc = fs.readFileSync('./tmp/'+file).toString("hex");
 
   var encrypted = CryptoJS.AES.encrypt(toBeEnc, '12334');
 
-  fs.appendFile('./files/'+file+'.Krypt', encrypted, function (err) {
+  fs.appendFile('./safe/'+org+'.Krypt', encrypted, function (err) {
     if (err) {
                 // append failed
               } else {
@@ -20,17 +20,40 @@ function encrypt(file){
             });
 }
 
+function decrypt(file) {
+ var file2b = fs.readFileSync('./tmp/'+ file);
+ var bytes  = CryptoJS.AES.decrypt(file2b.toString(), '12334');
+ console.log(bytes.toString(CryptoJS.enc.Utf8))
+ return bytes.toString(CryptoJS.enc.Utf8)
+}
 
-app.post("/uploads", upload.single('avatar'), function (req, res) {  
+
+app.post("/encrypt", upload.single('enc'), function (req, res, next) {  
+  var org = req.file.originalname;
+  var file = req.file.filename;
+  setTimeout(function () {
+    console.log("wow");
+    encrypt(file, org);
+  }, 5000);
   res.redirect('/')
 });
+
+app.post("/decrypt", upload.single('dec'), function (req, res, next) {  
+  var file = req.file.filename;
+  var org = req.file.originalname;
+  data = decrypt(file)
+  var file = req.file.filename;
+  res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", back.png"})
+});
+
+
 
 
 app.use(express.static(__dirname+"/public"));
 app.set("view engine","ejs");
 
 app.get('/token',function(req,res){
-    res.render('upload.ejs');
+  res.render('upload.ejs');
 })
 
 app.get('/',function (req, res) {
@@ -41,26 +64,9 @@ app.get('/',function (req, res) {
     
     
   //  // Decrypt
-  //  var file2b = fs.readFileSync('./files/test.Krypt');
-  //  var bytes  = CryptoJS.AES.decrypt(file2b.toString(), '12334');
-  //  console.log(bytes.toString(CryptoJS.enc.Utf8));
-  //  if(coa===bytes.toString(CryptoJS.enc.Utf8)){
-  //   console.log("hurray!!!");
-  //   fs.appendFile('./files/COA.txt',coa, function (err) {
-  //     if (err) {
-  //               // append failed
-  //             } else {
-  //               // done
-  //             }
-  //           })
-  //   res.render("index",{clickhandler : "createFileFromHex("+"'"+ coa +"'"+", 'rikki.png')"});
-  // }
 
-   // var coa = fs.readFileSync('./files/COA.png').toString("hex");
-   // console.log(coa);
-   // //Encrypt
-   //  var encrypted = CryptoJS.AES.encrypt(coa, '12334');
-   // // Decrypt
+
+     // // Decrypt
    //  var bytes  = CryptoJS.AES.decrypt(encrypted.toString(), '12334');
    //  console.log(bytes.toString(CryptoJS.enc.Utf8));
    //  if(coa===bytes.toString(CryptoJS.enc.Utf8)){
