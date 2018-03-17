@@ -9,30 +9,24 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
   <title>HASH</title>
 
-  <style>
-  .center {
-    margin-left: auto;
-    margin-right: auto;
-}
-  </style>
 </head>
-<body style="background-color:black">
+<body style="background-color:rgba(0, 0, 0, 0.76)">
   <div style="color:#F0E68C">
     <div style="float:left;margin:0.5em;width:98%">
-    <h1>Token Name</h1>
-    <input id="name" type="text" ></input>
+    <h1 style="float:left">Token Name</h1>
+    <input class="form-control form-control-lg" id="name" type="text" ></input>
+</div>
+<div style="float:left;margin:0.5em;width:98%;">
+    <h1 style="float:left">Token Symbol</h1>
+    <input  class="form-control form-control-lg" id="symbol" type="text"></input>
 </div>
 <div style="float:left;margin:0.5em;width:98%">
-    <h1>Token Symbol</h1>
-    <input id="symbol" type="text"></input>
-</div>
-<div style="float:left;margin:0.5em;width:98%">
-    <h1>File Format</h1>
-    <input id="format" type="text"></input>
+    <h1 style="float:left">File Format</h1>
+    <input class="form-control form-control-lg" id="format" type="text"></input>
     </div>
 </div>
-    <button onclick="upload()"><center>Upload</center></button>
-
+    <center><button style="border: 2px solid gray;color: gray;background-color: white;padding: 8px 20px;border-radius: 8px;font-size: 20px;font-weight: bold;" onclick="upload()"><center>Upload</center></button>
+</center>
 <script>
     var name=document.getElementById('name').value;
     var symbol=document.getElementById('symbol').value;
