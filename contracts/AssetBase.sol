@@ -1,0 +1,58 @@
+pragma solidity ^0.4.11;
+contract AssetBase { 
+    
+    event Transfer(address from,address to,uint256 tokenId);
+    /*
+    event LockCreated(address, uint256,string);
+    event EventGenerationByForging(uint256[],address);
+    event LicenseGiven(uint256,uint256,uint64,string,string,address);
+    event LicenseRemoved(uint256,uint256);
+    event LimitPlanAdded (uint256,uint256);
+    event LimitPlanRemoved(uint256,uint256);
+    event LicenseRateTimeAdded(uint256 ,uint256);
+    event LicenseRateTimeRemoved(uint256,uint256);
+    event LockUpgraded (uint lockid, uint256 increaseByValue);
+    */
+    // struct of lock , all locks generated would be stored over here
+    struct Asset {
+        string assetHash;
+        uint64 creationTime;
+        uint256 assetType;
+        // status means onrent, for sale , locked , unlocked and more 
+        // for now lets assume , 0 is the default , unlocked,unrented,notonsale
+        // 2 means on sale 
+        // 1 means on chain
+        // TODO check if this is needed  
+        uint256 assetStatus;
+        string personalisedMessage;
+    }
+    
+    /*** STORAGE ***/
+
+    // this array will store all locks , we give id we get lock object , simple and sweet !
+    Asset[] public assets;
+    // this array will contain all the locked locks
+    // this mapping will track address of owner with lockid which is basically the index of lock in the above array 
+    mapping(uint256 => address) public tokenIndexToOwner;
+    // this mapping will give us no of locks owned by an address , we will increment this when tranfer of ownership happens
+    mapping(address => uint256) ownershipTokenCount;
+    // this mapping will track the owner ship approval , will be used for escrowing
+    mapping (uint256 => address) public tokenIndexToApproved;
+
+    function _transfer(address _from, address _to, uint256 _tokenId) internal {
+        ownershipTokenCount[_to]++;
+        // transfer ownership
+        tokenIndexToOwner[_tokenId] = _to;
+        // When creating new locks _from is 0x0, but we can't account that address.
+        if (_from != address(0)) {
+            ownershipTokenCount[_from]--;
+            // clear any previously approved ownership exchange
+            delete tokenIndexToApproved[_tokenId];
+        }
+        // Emit the transfer event.
+        Transfer(_from, _to, _tokenId);
+    }
+    function isOwnerOf(address _claimant, uint256 _tokenId) internal view returns (bool) {
+        return tokenIndexToOwner[_tokenId] == _claimant;
+    }
+}
