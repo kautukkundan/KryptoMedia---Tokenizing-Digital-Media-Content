@@ -93,7 +93,7 @@
         </div>
         <!-- ROW ENDS -->
         <br><br>
-        <div class="divider">GENERATE YOUR CONTENT</div>
+        <div class="divider">GENERATE YOUR ASSET</div>
 
         <div class="row">
 
@@ -116,7 +116,7 @@
 
         <!-- ROW ENDS -->
         <br><br>
-        <button class="btn btn-primary" style="width: 10vw; margin: auto;">GO</button>
+        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="generateAsset(token-symbol, asset-type,hash,message)">GO</button>
           
 
         <!-- ROW ENDS -->
@@ -141,6 +141,15 @@
 
   function test(symbol, name) {
     console.log(symbol)
+  }
+
+  var token_symbol=document.getElementById('token-symbol').value
+  var hash=document.getElementById('hash').value
+  var message=document.getElementById('message').value
+  var asset_type=document.getElementById('asset-type').value
+
+  function generateAsset(token_symbol,asset_type,hash,message){
+    
   }
 
 </script>
