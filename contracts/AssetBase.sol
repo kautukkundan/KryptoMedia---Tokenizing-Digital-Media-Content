@@ -74,7 +74,6 @@ contract AssetBase {
         require(newAssetId == uint256(uint32(newAssetId)));
         // transfers newly generated locks to ceoaddress
         _transfer(0,msg.sender,newAssetId);
-
         // fire event
         AssetCreated(hashprefix,newAssetId,personalMessage,_assetType,0);
 
