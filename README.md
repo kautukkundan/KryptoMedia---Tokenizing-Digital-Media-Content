@@ -1,6 +1,3 @@
-### Inspired by CryptoKitties 
-https://www.cryptokitties.co/
-
 We are converting digital media ( Music, PDF, videos, images etc ) into ERC-721 tokens so that the content can be used as "currency" on the blockchain network, thus enabling it to be traded, rented and sold directly to the consumer. We are also protecting the copyrights of the content by providing the content to the consumer through an isolated channel only.
 
 
