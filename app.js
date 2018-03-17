@@ -38,21 +38,11 @@ app.post("/encrypt", upload.single('enc'), function (req, res, next) {
   res.redirect('/')
 });
 
-app.post("/decrypt", upload.single('dec'), function (req, res, next) {  
-  var file = req.file.filename;
-  var org = req.file.originalname;
-  data = decrypt(file)
-  var file = req.file.filename;
-  res.redirect('/')
-  res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", back.png"})
-});
-
 var data;
 
 app.post("/decrypt", upload.single('dec'), function (req, res, next) {  
   var file = req.file.filename;
   var org = req.file.originalname;
-  var file = req.file.filename;
   setTimeout(function () {
     console.log("decrypted");
     data = decrypt(file)
@@ -62,7 +52,7 @@ app.post("/decrypt", upload.single('dec'), function (req, res, next) {
 
 app.use("/download",function(req,res){
   console.log(data);
-  res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", 'back.png')"})
+  res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", 'back.jpg')"})
 })
 
 
