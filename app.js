@@ -47,6 +47,26 @@ app.get('/',function (req, res) {
   //   res.render("index",{clickhandler : "createFileFromHex("+"'"+ coa +"'"+", 'rikki.png')"});
   // }
 
+   var coa = fs.readFileSync('./files/COA.png').toString("hex");
+   console.log(coa);
+   //Encrypt
+    var encrypted = CryptoJS.AES.encrypt(coa, '12334');
+   // Decrypt
+    var bytes  = CryptoJS.AES.decrypt(encrypted.toString(), '12334');
+    console.log(bytes.toString(CryptoJS.enc.Utf8));
+    if(coa===bytes.toString(CryptoJS.enc.Utf8)){
+        console.log("hurray!!!");
+        fs.appendFile('./files/COA.txt',coa, function (err) {
+            if (err) {
+                // append failed
+            } else {
+                // done
+            }
+        })
+    }
+    if(coa===bytes.toString())
+    res.render("index",{clickhandler : "createFileFromHex("+"'"+coa+"'"+", 'rikki.png')"});
+
 
 });
 
