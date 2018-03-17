@@ -2,6 +2,7 @@ pragma solidity ^0.4.11;
 contract AssetBase { 
     
     event Transfer(address from,address to,uint256 tokenId);
+    event AssetCreated(string,uint256,string,uint256,uint256);
     /*
     event LockCreated(address, uint256,string);
     event EventGenerationByForging(uint256[],address);
@@ -17,6 +18,7 @@ contract AssetBase {
     struct Asset {
         string assetHash;
         uint64 creationTime;
+        // 1- pdf , 2- music,3-jpeg,4-png
         uint256 assetType;
         // status means onrent, for sale , locked , unlocked and more 
         // for now lets assume , 0 is the default , unlocked,unrented,notonsale
@@ -27,8 +29,6 @@ contract AssetBase {
         string personalisedMessage;
     }
     
-    /*** STORAGE ***/
-
     // this array will store all locks , we give id we get lock object , simple and sweet !
     Asset[] public assets;
     // this array will contain all the locked locks
@@ -54,5 +54,30 @@ contract AssetBase {
     }
     function isOwnerOf(address _claimant, uint256 _tokenId) internal view returns (bool) {
         return tokenIndexToOwner[_tokenId] == _claimant;
+    }
+    function _generateAssets (
+        string personalMessage,
+        string hashprefix,
+        uint256 _assetType
+    )  returns (uint256)
+    {
+        Asset memory _asset = Asset(
+        {
+        creationTime: uint64(now),
+        assetStatus: 0,
+        assetHash: hashprefix,
+        personalisedMessage: personalMessage,
+        assetType:_assetType
+        });
+
+        uint256 newAssetId = assets.push(_asset) - 1;
+        require(newAssetId == uint256(uint32(newAssetId)));
+        // transfers newly generated locks to ceoaddress
+        _transfer(0,msg.sender,newAssetId);
+
+        // fire event
+        AssetCreated(hashprefix,newAssetId,personalMessage,_assetType,0);
+
+        return newAssetId;
     }
 }
