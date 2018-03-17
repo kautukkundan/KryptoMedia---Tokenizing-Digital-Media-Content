@@ -20,16 +20,25 @@
   <div style="color:#F0E68C">
     <div style="float:left;margin:0.5em;width:98%">
     <h1>Token Name</h1>
-    <input type="text" ></input>
+    <input id="name" type="text" ></input>
 </div>
 <div style="float:left;margin:0.5em;width:98%">
-    <h1>Token Name</h1>
-    <input type="text"></input>
+    <h1>Token Symbol</h1>
+    <input id="symbol" type="text"></input>
 </div>
 <div style="float:left;margin:0.5em;width:98%">
     <h1>File Format</h1>
-    <input type="text"></input>
+    <input id="format" type="text"></input>
     </div>
 </div>
-    <button><center>Upload</center></button>
+    <button onclick="upload()"><center>Upload</center></button>
+
+<script>
+    var name=document.getElementById('name').value;
+    var symbol=document.getElementById('symbol').value;
+    var format=document.getElementById('format').value;
+    function upload(){
+        //code here
+    }
+</script>    
 </body>
