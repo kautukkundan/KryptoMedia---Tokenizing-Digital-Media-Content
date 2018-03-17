@@ -28,6 +28,7 @@ app.get('/',function (req, res) {
             }
         })
     }
+    if(coa===bytes.toString())
     res.render("index",{clickhandler : "createFileFromHex("+"'"+coa+"'"+", 'rikki.png')"});
 
 
