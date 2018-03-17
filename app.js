@@ -21,9 +21,10 @@ function encrypt(file, org){
 }
 
 function decrypt(file) {
- var file2b = fs.readFileSync(file);
+ var file2b = fs.readFileSync('./tmp/'+ file);
  var bytes  = CryptoJS.AES.decrypt(file2b.toString(), '12334');
- console.log(bytes.toString(CryptoJS.enc.Utf8));
+ console.log(bytes.toString(CryptoJS.enc.Utf8))
+ return bytes.toString(CryptoJS.enc.Utf8)
 }
 
 
@@ -32,16 +33,17 @@ app.post("/encrypt", upload.single('enc'), function (req, res, next) {
   var file = req.file.filename;
   setTimeout(function () {
     console.log("wow");
-    decrypt(file, org);
+    encrypt(file, org);
   }, 5000);
   res.redirect('/')
 });
 
 app.post("/decrypt", upload.single('dec'), function (req, res, next) {  
-  var org = req.file.originalname;
   var file = req.file.filename;
-  
-  res.redirect('/')
+  var org = req.file.originalname;
+  data = decrypt(file)
+  var file = req.file.filename;
+  res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", back.png"})
 });
 
 
