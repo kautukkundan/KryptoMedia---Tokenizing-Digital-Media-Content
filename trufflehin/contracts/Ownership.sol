@@ -1,4 +1,4 @@
-// this contract will have all the functions required to track ownership of the 721 , this will not change ever 
+// this contract will have all the functions required to track ownership of the 721 , this will not change ever
 pragma solidity ^0.4.11;
 
 import "./AssetBase.sol";
@@ -8,6 +8,7 @@ contract Ownership is AssetBase , ERC721 {
 
     string public  name ;
     string public  symbol ;
+
 
 
     function Ownership(string _name,string _symbol) public {
@@ -22,20 +23,24 @@ contract Ownership is AssetBase , ERC721 {
         assetType:0
         });
 
-        uint256 newAssetId = assets.push(_asset) - 1;
-        require(newAssetId == uint256(uint32(newAssetId)));
+
+        assets[nonce] = _asset;
+        incrementNonce();
+        _transfer(0,msg.sender, nonce-1);
+
+        /* uint256 newAssetId = assets.push(_asset) - 1; */
         // transfers newly generated locks to ceoaddress
-        _transfer(0,msg.sender,newAssetId);
+        /* _transfer(0,msg.sender, newAssetId); */
 
         // fire event
-        AssetCreated(_asset.assetHash,newAssetId,_asset.personalisedMessage,0,0);
+        AssetCreated(_asset.assetHash, nonce-1,_asset.personalisedMessage,0,0);
 
     }
     /**events*/
     event Approval(address from, address to, uint256 _tokenId);
-    
-    
-    
+
+
+
     bytes4 constant InterfaceSignature_ERC165 =
         bytes4(keccak256("supportsInterface(bytes4)"));
 
@@ -117,7 +122,7 @@ contract Ownership is AssetBase , ERC721 {
     function approve(
         address _to,
         uint256 _tokenId
-    )   external     
+    )   external
     {
         // Only an owner can grant transfer approval.
         require(_owns(msg.sender, _tokenId));
@@ -140,12 +145,12 @@ contract Ownership is AssetBase , ERC721 {
     /// vaibhav`s interpretation
     /// checks if the person calling the function has the approval ,
     /// checks if the _from owns the lock
-    /// transfer 
+    /// transfer
     function transferFrom(
         address _from,
         address _to,
         uint256 _tokenId
-    )external   
+    )external
     {
         // Safety check to prevent against an unexpected 0x0 default.
         require(_to != address(0));
@@ -155,7 +160,7 @@ contract Ownership is AssetBase , ERC721 {
         require(_to != address(this));
         // Check for approval and valid ownership
         require(_approvedFor(msg.sender, _tokenId));
-        require(_owns(_from, _tokenId)); 
+        require(_owns(_from, _tokenId));
 
         // Reassign ownership (also clears pending approvals and emits Transfer event).
         _transfer(_from, _to, _tokenId);
@@ -163,7 +168,7 @@ contract Ownership is AssetBase , ERC721 {
     /// @notice Returns the total number of locks currently in existence.
     /// @dev Required for ERC-721 compliance.
     function totalSupply() public view returns (uint) {
-        return assets.length - 1;
+        return nonce;
     }
 
     /// @notice Returns the address currently assigned ownership of a given lock.
