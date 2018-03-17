@@ -34,25 +34,27 @@ app.post("/encrypt", upload.single('enc'), function (req, res, next) {
   setTimeout(function () {
     console.log("wow");
     encrypt(file, org);
-  }, 5000);
+  }, 3000);
   res.redirect('/')
 });
 
 var data;
+var org;
 
 app.post("/decrypt", upload.single('dec'), function (req, res, next) {  
   var file = req.file.filename;
-  var org = req.file.originalname;
+  org = req.file.originalname;
   setTimeout(function () {
     console.log("decrypted");
     data = decrypt(file)
     res.redirect('/download')  
-  }, 5000);
+  }, 3000);
 });
+
 
 app.use("/download",function(req,res){
   console.log(data);
-  res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", 'back.jpg')"})
+  res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+","+"'"+ org.slice(0,-6)+"')"})
 })
 
 
