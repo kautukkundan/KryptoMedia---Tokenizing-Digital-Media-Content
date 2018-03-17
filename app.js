@@ -70,7 +70,7 @@ app.get('/up',function (req, res) {
   res.render("upload")
 });
 
-app.get('/tansfer',function (req, res) {
+app.get('/transfer',function (req, res) {
   res.render("transfer")
 });
 
