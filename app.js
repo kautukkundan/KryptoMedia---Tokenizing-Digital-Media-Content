@@ -23,7 +23,7 @@ function encrypt(file, org){
 function decrypt(file) {
  var file2b = fs.readFileSync('./tmp/'+ file);
  var bytes  = CryptoJS.AES.decrypt(file2b.toString(), '12334');
- //console.log(bytes.toString(CryptoJS.enc.Utf8))
+ // console.log(bytes.toString(CryptoJS.enc.Utf8))
  return bytes.toString(CryptoJS.enc.Utf8)
 }
 
@@ -36,6 +36,15 @@ app.post("/encrypt", upload.single('enc'), function (req, res, next) {
     encrypt(file, org);
   }, 5000);
   res.redirect('/')
+});
+
+app.post("/decrypt", upload.single('dec'), function (req, res, next) {  
+  var file = req.file.filename;
+  var org = req.file.originalname;
+  data = decrypt(file)
+  var file = req.file.filename;
+  res.redirect('/')
+  res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", back.png"})
 });
 
 var data;
@@ -55,6 +64,8 @@ app.use("/download",function(req,res){
   console.log(data);
   res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", 'back.png')"})
 })
+
+
 
 
 app.use(express.static(__dirname+"/public"));
