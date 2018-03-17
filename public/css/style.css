@@ -1,6 +1,7 @@
   body {
     margin: 0;
-    background: url('/images/bg2.png') no-repeat fixed right top;
+    background: #17435D;
+    /*background: url('/images/bg2.png') no-repeat fixed right top;*/
     background-size: cover;
     font-family: 'Raleway', sans-serif;
   }
@@ -133,7 +134,7 @@
 
 .top-card {
   height: 25vh;
-  background: url('/images/header.png') no-repeat bottom;
+  background: url('/images/bg.jpg') no-repeat bottom;
   background-size: cover;
   border-radius: 10px;
 }
@@ -160,9 +161,9 @@
 }
 
 .each-card:hover {
-  font-size: 120%;
+/*  font-size: 120%;*/
   cursor: pointer;
-  padding: 50px;
+  padding: 30px;
 }
 
 .divider {

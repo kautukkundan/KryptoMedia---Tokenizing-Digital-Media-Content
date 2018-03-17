@@ -62,6 +62,15 @@ app.get('/store',function (req, res) {
   res.render("store")
 });
 
+app.get('/access',function (req, res) {
+  res.render("access")
+});
+
+app.get('/up',function (req, res) {
+  res.render("upload")
+});
+
+
 app.listen(3000,function () {
  console.log("HINT started on port 3000");
 });
