@@ -1,6 +1,6 @@
 pragma solidity ^0.4.11;
-contract AssetBase { 
-    
+contract AssetBase {
+
     event Transfer(address from,address to,uint256 tokenId);
     event AssetCreated(string,uint256,string,uint256,uint256);
     /*
@@ -20,25 +20,30 @@ contract AssetBase {
         uint64 creationTime;
         // 1- pdf , 2- music,3-jpeg,4-png
         uint256 assetType;
-        // status means onrent, for sale , locked , unlocked and more 
+        // status means onrent, for sale , locked , unlocked and more
         // for now lets assume , 0 is the default , unlocked,unrented,notonsale
-        // 2 means on sale 
+        // 2 means on sale
         // 1 means on chain
-        // TODO check if this is needed  
+        // TODO check if this is needed
         uint256 assetStatus;
         string personalisedMessage;
     }
-    
+
+    uint256 public nonce;
+
     // this array will store all locks , we give id we get lock object , simple and sweet !
-    Asset[] public assets;
+    /* Asset[] public assets; */
+    mapping(uint => Asset) public assets;
     // this array will contain all the locked locks
-    // this mapping will track address of owner with lockid which is basically the index of lock in the above array 
+    // this mapping will track address of owner with lockid which is basically the index of lock in the above array
     mapping(uint256 => address) public tokenIndexToOwner;
     // this mapping will give us no of locks owned by an address , we will increment this when tranfer of ownership happens
     mapping(address => uint256) ownershipTokenCount;
     // this mapping will track the owner ship approval , will be used for escrowing
     mapping (uint256 => address) public tokenIndexToApproved;
-
+    function incrementNonce() internal {
+      nonce += 1;
+    }
     function _transfer(address _from, address _to, uint256 _tokenId) internal {
         ownershipTokenCount[_to]++;
         // transfer ownership
@@ -70,14 +75,17 @@ contract AssetBase {
         assetType:_assetType
         });
 
-        uint256 newAssetId = assets.push(_asset) - 1;
-        require(newAssetId == uint256(uint32(newAssetId)));
+        /* uint256 newAssetId = assets.push(_asset) - 1;
+        require(newAssetId == uint256(uint32(newAssetId))); */
+        assets[nonce] = _asset;
+        incrementNonce();
+
         // transfers newly generated locks to ceoaddress
-        _transfer(0,msg.sender,newAssetId);
+        _transfer(0,msg.sender,nonce - 1);
 
         // fire event
-        AssetCreated(hashprefix,newAssetId,personalMessage,_assetType,0);
+        AssetCreated(hashprefix,nonce - 1,personalMessage,_assetType,0);
 
-        return newAssetId;
+        return nonce - 1;
     }
 }
