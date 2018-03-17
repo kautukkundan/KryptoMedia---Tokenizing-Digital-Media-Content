@@ -2,7 +2,8 @@ var express     =   require('express');
 var app         =   express();
 var fs = require('fs');
 var CryptoJS = require("crypto-js");
-
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 
 function encrypt(file){
 
@@ -20,10 +21,9 @@ function encrypt(file){
 }
 
 
-app.get('/file/:id', function(req, res){
-  encrypt(req.params.id);
+app.post("/uploads", upload.single('avatar'), function (req, res) {  
+  res.redirect('/')
 });
-
 
 
 app.use(express.static(__dirname+"/public"));
@@ -32,7 +32,7 @@ app.set("view engine","ejs");
 
 app.get('/',function (req, res) {
 
-  res.render("main", {encrypt})
+  res.render("main")
     // console.log(coa);
     // //Encrypt
     
@@ -75,18 +75,6 @@ app.get('/',function (req, res) {
 
 
  });
-
-app.post('/upload', function (req, res) {
-  fs.appendFile('./files', req.body, function(err){
-    if(err){
-
-    }
-    else {
-
-    }
-  });
-  res.redirect("/")
-});
 
 app.listen(3000,function () {
  console.log("HINT started on port 3000");
