@@ -30,7 +30,7 @@ contract buySellAssets is Ownership {
     // fetch the lock , check owner is the msg.sender , change lockstatus to onsale 
     // will be called by owner of lock
     // check if or front end will call this or contract 
-    function createSellOrder(uint256 price, uint256 _token_id ,string _symbol) external payable whenNotPaused {
+    function createSellOrder(uint256 price, uint256 _token_id ,string _symbol) external payable  {
         // add require statements to validate input 
         // checks if the owner is msg.sender , only the owner can put sell order 
         require(_owns(msg.sender, _token_id));
