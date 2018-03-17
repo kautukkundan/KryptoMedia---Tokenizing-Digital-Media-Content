@@ -23,7 +23,7 @@ function encrypt(file, org){
 function decrypt(file) {
  var file2b = fs.readFileSync('./tmp/'+ file);
  var bytes  = CryptoJS.AES.decrypt(file2b.toString(), '12334');
- console.log(bytes.toString(CryptoJS.enc.Utf8))
+ // console.log(bytes.toString(CryptoJS.enc.Utf8))
  return bytes.toString(CryptoJS.enc.Utf8)
 }
 
@@ -43,6 +43,7 @@ app.post("/decrypt", upload.single('dec'), function (req, res, next) {
   var org = req.file.originalname;
   data = decrypt(file)
   var file = req.file.filename;
+  res.redirect('/')
   res.render('dl', {clickhandler : "createFileFromHex("+"'"+data+"'"+", back.png"})
 });
 
