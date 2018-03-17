@@ -6,14 +6,14 @@ import "./ERC721.sol";
 
 contract Ownership is AssetBase , ERC721 {
 
-    string public constant name = "LoveBlock";
-    string public constant symbol = "LB";
+    string public  name = "LoveBlock";
+    string public  symbol = "LB";
 
     function Ownership(string _name,string _symbol) {
         name=_name;
         symbol=_symbol;
     }
-    /**events  */
+    /**events*/
     event Approval(address from, address to, uint256 _tokenId);
     
     
