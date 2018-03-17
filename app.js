@@ -29,6 +29,9 @@ app.post("/uploads", upload.single('avatar'), function (req, res) {
 app.use(express.static(__dirname+"/public"));
 app.set("view engine","ejs");
 
+app.get('/token',function(req,res){
+    res.render('upload.ejs');
+})
 
 app.get('/',function (req, res) {
 
