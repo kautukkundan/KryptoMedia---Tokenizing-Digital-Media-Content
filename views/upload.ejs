@@ -87,7 +87,7 @@
           </div>
           
             <br><br>
-            <button class="btn btn-primary" style="width: 10vw; margin: auto;"  onclick="createAsset(symbol, name)">GO</button>
+            <button class="btn btn-primary" style="width: 10vw; margin: auto;"  onclick="createAsset()">GO</button>
           
 
         </div>
@@ -98,16 +98,16 @@
         <div class="row">
 
           <!-- ROW STARTS -->
-          <div class="col-4 text-left search">
+          <div class="col-3 text-left search">
             <input type="search" class="search" name="to" placeholder="TOKEN-SYMBOL" id="token-symbol">
           </div>
-          <div class="col-4 text-left search">
+          <div class="col-3 text-left search">
             <input type="search" class="search" name="token-id" placeholder="ASSET TYPE" id="asset-type">
           </div>
-          <div class="col-4 text-left search">
+          <div class="col-3 text-left search">
                 <input type="search" class="search" name="token-id" placeholder="HASH" id="hash">
               </div>
-          <div class="col-4 text-left search">
+          <div class="col-3 text-left search">
             <input type="search" class="search" name="symbol" placeholder="MESSAGE" id="message">
           </div>
 
@@ -116,7 +116,7 @@
 
         <!-- ROW ENDS -->
         <br><br>
-        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="generateAsset(token-symbol, asset-type,hash,message)">GO</button>
+        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="generateAsset()">GO</button>
           
 
         <!-- ROW ENDS -->
@@ -134,34 +134,42 @@
 
 </div>
 
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 <script type="text/javascript">
   
+
+function createAsset() { 
   var symbol = document.getElementById('symbol').value
   var name = document.getElementById('token-name').value
+  // $.get("http://localhost:8000/createAsset/"+symbol+"/"+name, function(data, status){
+  //        console.log(data,status);
+  //        console.log(symbol+name);
+  //   });
+  location.href = "http://localhost:8000/createAsset/"+symbol+"/"+name
+  };
+    // window.redirect("http://localhost:8000/createAsset/"+symbol+"/"+name);
+    //location.href="http://localhost:8000/createAsset/"+symbol+"/"+name;
 
-  function createAsset(symbol, name) {
-    $.get("http://localhost:8000/createAsset/"+symbol+"/"+name, function(data, status){
-        console.log(data,status);
-    });
 
-  }
+  function generateAsset(){
+    var token_symbol=document.getElementById('token-symbol').value
+    var hash=document.getElementById('hash').value
+    var message=document.getElementById('message').value
+    var asset_type=document.getElementById('asset-type').value
 
-  var token_symbol=document.getElementById('token-symbol').value
-  var hash=document.getElementById('hash').value
-  var message=document.getElementById('message').value
-  var asset_type=document.getElementById('asset-type').value
-
-  function generateAsset(token_symbol,asset_type,hash,message){
-
+  location.href = "http://localhost:8000/generateAsset/"+symbol+"/"+asset_type+"/"+hash+"/"+message  
+  
   }
 
 </script>
 
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html> 
