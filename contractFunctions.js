@@ -14,10 +14,13 @@ let CoreObj = require('./trufflehin/build/contracts/Core.json');
 //let obj2 = require('./trufflehin/build/contracts/Test.json')
 
 var DeployerContractABI = JSON.stringify(CoreDeployerObj.abi);
-var DeployerContractAddress = CoreDeployerObj.networks['5777'].address;
+//var DeployerContractAddress = CoreDeployerObj.networks['5777'].address;
+var DeployerContractAddress="0xf12b5dd4ead5f743c6baa640b0216200e89b60da";
 // var DeployerContractBytecode = obj.bytecode
 var DeployerContract = web3.eth.contract(JSON.parse(DeployerContractABI));
 var CoreDeployer = DeployerContract.at(DeployerContractAddress);
+console.log("coredeployer instance"+CoreDeployer);
+console.log("deployer contract address"+DeployerContractAddress.toString());
 
 var CoreContractABI = JSON.stringify(CoreObj.abi);
 var CoreContract = web3.eth.contract(JSON.parse(CoreContractABI));
@@ -38,6 +41,7 @@ function returnContractInstance(_symbol){
 app.get("/createAsset/:sym/:name",function (req, res) {
     var _symbol=req.params.sym;
     var _name=req.params.name;
+
         CoreDeployer.createCore(_name,_symbol, {gas: '6000000'}, function (err, result) {
             if(err){
                 console.log(err);
@@ -69,16 +73,9 @@ app.get("/generateAsset/:_symbol/:_assetType/:hash/:personalMessage",function (r
     var personalMessage = req.params.personalMessage;  
     var hash  = req.params.hash;   
     var _assetType = req.params._assetType;  
-        
 
-        // var instance = CoreDeployer.getAddressFromCores(_symbol, function (err, result) {
-        //     if(err){
-        //         console.log(err);
-        //     } else {
-        //         console.log(result);
-        //         return result;
-        //     }
-        // })
+
+
         var instance = returnContractInstance(_symbol);
 
         instance._generateAssets(personalMessage,hash,_assetType,function(err,result){

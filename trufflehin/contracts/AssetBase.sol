@@ -1,7 +1,7 @@
 pragma solidity ^0.4.11;
 contract AssetBase {
 
-    event Transfer(address from,address to,uint256 tokenId);
+        event Transfer(address from,address to,uint256 tokenId);
     event AssetCreated(string,uint256,string,uint256,uint256);
     /*
     event LockCreated(address, uint256,string);
