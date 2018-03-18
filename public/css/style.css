@@ -134,7 +134,8 @@
 
 .top-card {
   height: 25vh;
-  background: url('/images/bg.jpg') no-repeat bottom;
+  background: rgb(28, 146, 214);
+  /* background: url('/images/bg.jpg') no-repeat bottom; */
   background-size: cover;
   border-radius: 10px;
 }

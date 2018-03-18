@@ -23,6 +23,51 @@
 
   <title>HASH</title>
 
+  <style>
+    
+      a:link {
+      text-decoration: none;
+  }
+  
+  a:visited {
+      text-decoration: none;
+  }
+  
+  a:hover {
+      text-decoration: none;
+  }
+  
+  a:active {
+      text-decoration: none;
+  }
+  
+  
+      /* unvisited link */
+  a:link {
+      color: blue;
+  }
+  
+  /* visited link */
+  a:visited {
+      color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+      color: hotpink;
+  }
+  
+  /* selected link */
+  a:active {
+      color: blue;
+  }
+  
+      .iframeW {
+        background: red;
+        margin-left: 500px;
+      }
+    </style>
+
 </head>
 
 <body>
@@ -111,14 +156,19 @@
           <div class="col-3 text-left search">
             <input type="search" class="search" name="symbol" placeholder="MESSAGE" id="message">
           </div>
-
           
         </div>
 
         <!-- ROW ENDS -->
         <br><br>
-        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="generateAsset()">GO</button>
-          
+        <form id="uploadForm" enctype="multipart/form-data" method="post" action="/encrypt">
+          <input type="file" name="enc" />
+          <!-- <input type="submit" value="ENCRYPT File" name="submit"> -->
+        </form> 
+        <br><br>
+        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="subform()">GO</button>
+        
+
 
         <!-- ROW ENDS -->
       </div>
@@ -158,6 +208,22 @@ function createAsset() {
     //location.href="http://localhost:8000/createAsset/"+symbol+"/"+name;
 
 
+<<<<<<< HEAD
+=======
+  function generateAsset(){
+    var token_symbol=document.getElementById('token-symbol').value
+    var hash=document.getElementById('hash').value
+    var message=document.getElementById('message').value
+    var asset_type=document.getElementById('asset-type').value
+
+  location.href = "http://localhost:8000/generateAsset/"+symbol+"/"+asset_type+"/"+hash+"/"+message  
+  
+  }
+
+  function subform(){
+    $('#uploadForm').submit()
+  }
+>>>>>>> 21d772e24ae0de096d3c3dc0fa4f34775fe5abe7
 </script>
   <script>
       if (typeof web3 !== 'undefined') {

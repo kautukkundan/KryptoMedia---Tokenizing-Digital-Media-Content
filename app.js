@@ -27,7 +27,7 @@ app.post("/encrypt", upload.single('enc'), function (req, res, next) {
     console.log("wow");
     encrypt(file, org);
   }, 3000);
-  res.redirect('/')
+  res.redirect('http://localhost:3000/up')
 });
 
 var data;
