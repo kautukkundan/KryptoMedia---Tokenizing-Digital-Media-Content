@@ -22,6 +22,51 @@
 
   <title>HASH</title>
 
+  <style>
+    
+    a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+
+    /* unvisited link */
+a:link {
+    color: blue;
+}
+
+/* visited link */
+a:visited {
+    color: white;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+
+    .iframeW {
+      background: red;
+      margin-left: 500px;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -86,7 +131,8 @@
           <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
               <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
-                <br><br><br>
+                <br>
+                  <div style="font-size: 8vh"><i class="fa fa-image" aria-hidden="true"></i></div>                
                 IMAGES
               </div>
             </div>
@@ -95,16 +141,18 @@
           <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
               <div class="card-body text-center each-card" style="background: url('./images/mobies/2d.jpg'); height: 30vh">
-                <br><br><br>
+                <br>
+                <div style="font-size: 8vh"><i class="fa fa-video-camera" aria-hidden="true"></i></div>                                
                 VIDEOS
               </div>
             </div>
           </div>
 
-          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+          <div onclick="music()" class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
               <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
-                <br><br><br>
+                <br>
+                <div style="font-size: 8vh"><i class="fa fa-music" aria-hidden="true"></i></div>                                                
                 MUSIC
               </div>
             </div>
@@ -113,16 +161,18 @@
           <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
               <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
-                <br><br><br>
+                <br>
+                <div style="font-size: 8vh"><i class="fa fa-book" aria-hidden="true"></i></div>                                                
                 BOOKS
               </div>
             </div>
           </div>
 
-          <div onclick="decrypt()" class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+          <div id="pdf" onclick="pdf()" class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
               <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
-                <br><br><br>
+                <br>
+                <div style="font-size: 8vh"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></div>                                               
                 PDFs
               </div>
             </div>
@@ -131,7 +181,8 @@
           <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
               <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
-                <br><br><br>
+                <br>
+                <div style="font-size: 8vh"><i class="fa fa-gamepad" aria-hidden="true"></i></div>                                                
                 GAMES
               </div>
             </div>
@@ -145,6 +196,8 @@
       </div>
 
       <!-- MAIN BODY ENDS -->
+
+      <input id="file-input" type="file" name="name" style="display: none;" />
 
     </div>
 
@@ -205,6 +258,29 @@
       }
     });
   }
+
+      function music(){
+        $('#file-input').trigger('click');
+        setTimeout(function(){
+        var audio = new Audio('../files/music.mp3');
+        audio.play();
+      }, 6000); 
+    }
+
+      function pdf(){
+        $('#file-input').trigger('click');
+        setTimeout(function(){
+          var iframeW = document.createElement('iframeW');
+          var iframe = document.createElement('iframe');
+          iframeW.appendChild(iframe);
+          iframe.src ='../files/pdf.pdf';
+          iframe.download;
+          iframe.width='900px';
+        iframe.height='1000px';
+        document.getElementsByTagName('body')[0].appendChild(iframe);
+        }, 6000); 
+       
+    }
   </script>
 </body>
 </html> 

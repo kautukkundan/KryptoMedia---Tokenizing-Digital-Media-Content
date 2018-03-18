@@ -22,6 +22,51 @@
 
   <title>HASH</title>
 
+  <style>
+    
+      a:link {
+      text-decoration: none;
+  }
+  
+  a:visited {
+      text-decoration: none;
+  }
+  
+  a:hover {
+      text-decoration: none;
+  }
+  
+  a:active {
+      text-decoration: none;
+  }
+  
+  
+      /* unvisited link */
+  a:link {
+      color: blue;
+  }
+  
+  /* visited link */
+  a:visited {
+      color: white;
+  }
+  
+  /* mouse over link */
+  a:hover {
+      color: hotpink;
+  }
+  
+  /* selected link */
+  a:active {
+      color: blue;
+  }
+  
+      .iframeW {
+        background: red;
+        margin-left: 500px;
+      }
+    </style>
+
 </head>
 
 <style type="text/css">
@@ -82,7 +127,7 @@
                 <div class="top-card-title text-center text-white"><strong>Digital Media Tokens</strong></div>
                 <br>
                 <div class="top-card-body">
-                  Convert digital media ( Music, PDF, videos, images etc ) into ERC-721 tokens so that the content can be used as "currency" on the blockchain network, thus enabling it to be traded, rented and sold directly to the consumer.
+                  Convert digital media ( Music, PDF, videos, images etc ) into ERC-721 tokens so that the content can be used as "currency" on the blockchain network.
                 </div>
               </div>
             </div>
@@ -116,6 +161,9 @@
         <div class="col-4 text-left search">
             <input type="search" class="search" name="token_id" placeholder="TOKEN-ID" id="token-id">
           </div>
+          <div class="col-4 text-left search">
+              <input type="search" class="search" name="token_id" placeholder="SYMBOL" id="symbol">
+            </div>
           
             <br><br>
             <button class="btn btn-primary" style="width: 10vw;margin: auto;"  onclick="buyAsset(token_id)">GO</button>
