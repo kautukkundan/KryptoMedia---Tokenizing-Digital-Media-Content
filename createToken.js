@@ -7,7 +7,9 @@ let CoreObj = require('./trufflehin/build/contracts/Core.json')
 //let obj2 = require('./trufflehin/build/contracts/Test.json')
 
 var DeployerContractABI = JSON.stringify(CoreDeployerObj.abi)
-var DeployerContractAddress = CoreDeployerObj.networks['5777'].address
+// var DeployerContractAddress = CoreDeployerObj.networks['5777'].address
+var DeployerContractAddress="0xf12b5dd4ead5f743c6baa640b0216200e89b60da";
+
 // var DeployerContractBytecode = obj.bytecode
 var DeployerContract = web3.eth.contract(JSON.parse(DeployerContractABI))
 var CoreDeployer = DeployerContract.at(DeployerContractAddress);
@@ -23,18 +25,26 @@ var  CoreInstance;
 //         console.log(result);
 //     }
 // })
-CoreDeployer.getAddressFromCores("gg", function(err, result) {
-         if(err){
-             console.log(err);
-         }else {
-             var CoreInstance = CoreContract.at(result);
-             CoreInstance._generateAssets("[opleaseyou","hash",4, {gas: '6000000'},function(err,res){
-                if(err){
-                    console.log(err);
-                }
-                else{
-                    console.log(res);
-                }
-            }); 
-         }
+// CoreDeployer.getAddressFromCores("gg", function(err, result) {
+//          if(err){
+//              console.log(err);
+//          }else {
+//              var CoreInstance = CoreContract.at(result);
+//              CoreInstance.get("[opleaseyou","hash",4, {gas: '6000000'},function(err,res){
+//                 if(err){
+//                     console.log(err);
+//                 }
+//                 else{
+//                     console.log(res);
+//                 }
+//             });
+//          }
+// })
+CoreDeployer.getAddressFromCores("sd", function (err, result) {
+    if(err){
+        console.log(err);
+    } else {
+        console.log(result);
+        return result;
+    }
 })

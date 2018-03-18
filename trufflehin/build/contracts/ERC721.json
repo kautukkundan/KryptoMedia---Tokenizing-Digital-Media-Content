@@ -180,9 +180,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.4.11;\n// this basically defines an interface for what all functions we will use for transfer of assets ,ERC721 ones\n\n/// @title Interface for contracts conforming to ERC-721: Non-Fungible Tokens\n/// @author Dieter Shirley <dete@axiomzen.co> (https://github.com/dete)\ncontract ERC721 {\n    // Required methods\n    function totalSupply() public view returns (uint256 total);\n    function balanceOf(address _owner) public view returns (uint256 balance);\n    function ownerOf(uint256 _tokenId) external view returns (address owner);\n    function approve(address _to, uint256 _tokenId) external;\n    function transfer(address _to, uint256 _tokenId) external;\n    function transferFrom(address _from, address _to, uint256 _tokenId) external;\n\n    // Events\n    event Transfer(address from, address to, uint256 tokenId);\n    event Approval(address owner, address approved, uint256 tokenId);\n\n    // Optional\n    // function name() public view returns (string name);\n    // function symbol() public view returns (string symbol);\n    // function tokensOfOwner(address _owner) external view returns (uint256[] tokenIds);\n    // function tokenMetadata(uint256 _tokenId, string _preferredTransport) public view returns (string infoUrl);\n\n    // ERC-165 Compatibility (https://github.com/ethereum/EIPs/issues/165)\n    function supportsInterface(bytes4 _interfaceID) external view returns (bool);\n}",
-  "sourcePath": "/Users/darwin/Projects/hacks/HackInTheNorth/trufflehin/contracts/ERC721.sol",
+  "sourcePath": "/Users/rikki/RikkiChains/KryptoMedia---Tokenizing-Digital-Media-Content/trufflehin/contracts/ERC721.sol",
   "ast": {
-    "absolutePath": "/Users/darwin/Projects/hacks/HackInTheNorth/trufflehin/contracts/ERC721.sol",
+    "absolutePath": "/Users/rikki/RikkiChains/KryptoMedia---Tokenizing-Digital-Media-Content/trufflehin/contracts/ERC721.sol",
     "exportedSymbols": {
       "ERC721": [
         314
@@ -983,7 +983,7 @@
     "src": "0:1403:3"
   },
   "legacyAST": {
-    "absolutePath": "/Users/darwin/Projects/hacks/HackInTheNorth/trufflehin/contracts/ERC721.sol",
+    "absolutePath": "/Users/rikki/RikkiChains/KryptoMedia---Tokenizing-Digital-Media-Content/trufflehin/contracts/ERC721.sol",
     "exportedSymbols": {
       "ERC721": [
         314
@@ -1789,5 +1789,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-18T00:13:28.977Z"
+  "updatedAt": "2018-03-18T05:29:17.856Z"
 }

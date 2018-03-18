@@ -16,14 +16,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x60606040523415600e57600080fd5b60a38061001c6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a99dca3f146044575b600080fd5b3415604e57600080fd5b6054606e565b604051808215151515815260200191505060405180910390f35b600060019050905600a165627a7a7230582059c0b060c3e782e836be82c108de459343cceacb702041181773f779a3e7064e0029",
-  "deployedBytecode": "0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a99dca3f146044575b600080fd5b3415604e57600080fd5b6054606e565b604051808215151515815260200191505060405180910390f35b600060019050905600a165627a7a7230582059c0b060c3e782e836be82c108de459343cceacb702041181773f779a3e7064e0029",
+  "bytecode": "0x60606040523415600e57600080fd5b60a38061001c6000396000f300606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a99dca3f146044575b600080fd5b3415604e57600080fd5b6054606e565b604051808215151515815260200191505060405180910390f35b600060019050905600a165627a7a72305820268fb9dd8cd99aee30308bbd9bf40f4b1e39a502bed0bf5b2188904185793fee0029",
+  "deployedBytecode": "0x606060405260043610603f576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063a99dca3f146044575b600080fd5b3415604e57600080fd5b6054606e565b604051808215151515815260200191505060405180910390f35b600060019050905600a165627a7a72305820268fb9dd8cd99aee30308bbd9bf40f4b1e39a502bed0bf5b2188904185793fee0029",
   "sourceMap": "26:101:6:-;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "26:101:6:-;;;;;;;;;;;;;;;;;;;;;;;;46:79;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;68:4;89;82:11;;46:79;:::o",
   "source": "pragma solidity ^0.4.18;\n\ncontract Test {\n    function hi() returns(bool) {\n      return true;\n        // Starts paused\n    }\n}\n",
-  "sourcePath": "/Users/darwin/Projects/hacks/HackInTheNorth/trufflehin/contracts/Test.sol",
+  "sourcePath": "/Users/rikki/RikkiChains/KryptoMedia---Tokenizing-Digital-Media-Content/trufflehin/contracts/Test.sol",
   "ast": {
-    "absolutePath": "/Users/darwin/Projects/hacks/HackInTheNorth/trufflehin/contracts/Test.sol",
+    "absolutePath": "/Users/rikki/RikkiChains/KryptoMedia---Tokenizing-Digital-Media-Content/trufflehin/contracts/Test.sol",
     "exportedSymbols": {
       "Test": [
         823
@@ -149,7 +149,7 @@
     "src": "0:128:6"
   },
   "legacyAST": {
-    "absolutePath": "/Users/darwin/Projects/hacks/HackInTheNorth/trufflehin/contracts/Test.sol",
+    "absolutePath": "/Users/rikki/RikkiChains/KryptoMedia---Tokenizing-Digital-Media-Content/trufflehin/contracts/Test.sol",
     "exportedSymbols": {
       "Test": [
         823
@@ -287,5 +287,5 @@
     }
   },
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-03-18T00:13:28.983Z"
+  "updatedAt": "2018-03-18T05:29:17.857Z"
 }
