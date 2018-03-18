@@ -140,8 +140,9 @@
   var name = document.getElementById('token-name').value
 
   function createAsset(symbol, name) {
-    console.log(symbol)
-
+    $.get("http://localhost:8000/createAsset/"+symbol+"/"+name, function(data, status){
+        console.log(data,status);
+    });
 
   }
 
