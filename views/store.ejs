@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
 
-  <title>Find Your Hack</title>
+  <title>HASH</title>
 
 </head>
 
@@ -114,15 +114,18 @@
 
         <div class="row">
         <div class="col-4 text-left search">
-            <input type="search" class="search" name="token-id" placeholder="TOKEN-ID" id="token-id">
+            <input type="search" class="search" name="token_id" placeholder="TOKEN-ID" id="token-id">
           </div>
           
             <br><br>
-            <button class="btn btn-primary" style="width: 10vw;margin: auto;"  onclick="sellAsset(token-id, price)">GO</button>
+            <button class="btn btn-primary" style="width: 10vw;margin: auto;"  onclick="buyAsset(token_id)">GO</button>
           
 
         </div>
         <br><br>
+        <div class="title col-4">
+            EXPLORE
+          </div>
 
         <div class="divider">MUSIC</div>
 
@@ -132,28 +135,28 @@
 
           <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
-              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              <div class="card-body text-center each-card" style="background: url('../images/icons/music1.jpg'); height: 30vh">
               </div>
             </div>
           </div>
 
           <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
-              <div class="card-body text-center each-card" style="background: url('./images/mobies/2d.jpg'); height: 30vh">
+              <div class="card-body text-center each-card" style="background: url('../images/icons/music2.jpg'); height: 30vh">
               </div>
             </div>
           </div>
 
           <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
-              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              <div class="card-body text-center each-card" style="background: url('../images/icons/music2.jpg'); height: 30vh">
               </div>
             </div>
           </div>
 
           <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
-              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              <div class="card-body text-center each-card" style="background: url('../images/icons/music1.jpg'); height: 30vh">
               </div>
             </div>
           </div>
@@ -162,7 +165,7 @@
         </div>
 
         <!-- ROW ENDS -->
-
+        
         <div class="divider">MOVIES</div>
 
         <div class="row">
@@ -319,5 +322,16 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    var token_id=document.getElementById('token-id').value
+    var price=document.getElementById('price').value
+    function sellAsset(token_id, price){
+
+    }
+    var tokenIdToBuy=document.getElementById('token_id').value
+    function buyAsset(tokenIdToBuy){
+
+    }
+  </script>
 </body>
 </html> 

@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
 
-  <title>Find Your Hack</title>
+  <title>HASH</title>
 
 </head>
 
@@ -119,7 +119,7 @@
             </div>
           </div>
 
-          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+          <div onclick="decrypt()" class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
             <div class="card" style="border: none; padding: 0;">
               <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
                 <br><br><br>
@@ -151,7 +151,7 @@
 
     <!-- ALL MODALS -->
 
-    <div class="modal fade" id="Microsoft" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="Microsoft" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="padding: 0">
         <div class="modal-content">
           <div class="modal-body">
@@ -185,7 +185,7 @@
       </div>
     </div>
 
-  </div>
+  </div> -->
 
 
   <!-- Optional JavaScript -->
@@ -193,5 +193,18 @@
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+  function decrypt(){
+    //alert("hell");
+    $.ajax({
+      type: 'POST',
+      url: '/decrypt',
+      data: { ID: 'someid' },
+      success: function(resultData) {
+         alert(resultData);
+      }
+    });
+  }
+  </script>
 </body>
 </html> 
