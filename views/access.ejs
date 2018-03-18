@@ -192,6 +192,72 @@ a:active {
         </div>
 
         <!-- ROW ENDS -->
+        <div id="iframeW"></div>
+        <br><br>
+
+        <div class="divider">YOUR MUSIC</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+
+          <div class="zoom" style="float:left;margin:0.5em;">
+              <img src="../images/icons/music1.jpg" height="200" width="150" onclick="img()">
+              
+          </div>
+      
+          <div class="zoom" style="margin:0.5em;">
+              <img src="../images/icons/music2.jpg" height="200" width="150" onclick="img()">
+              
+          </div>
+          
+        </div>
+
+        <!-- ROW ENDS -->
+        
+        <div class="divider">YOUR MOVIES</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+
+          <div class="zoom" style="float:left;margin:0.5em;">
+              <img src="../images/icons/movie1.jpg" height="200" width="150" onclick="img()">
+              
+          </div>
+      
+          
+
+          <!-- ROW ENDS -->
+
+
+        </div>
+
+        <div class="divider">YOUR BOOKS</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+
+          <div class="zoom" style="float:left;margin:0.5em;">
+              <img src="../images/icons/book1.jpg" height="200" width="150" onclick="img()">
+              
+          </div>
+      
+          <div class="zoom" style="margin:0.5em;">
+              <img src="../images/icons/book2.jpg" height="200" width="150" onclick="img()">
+              
+          </div>
+          <div class="zoom" style="margin:0.5em;">
+              <img src="../images/icons/book3.jpg" height="200" width="150" onclick="img()">
+              
+          </div>
+          <!-- ROW ENDS -->
+
+
+        </div>
+
+        
 
       </div>
 
@@ -270,7 +336,7 @@ a:active {
       function pdf(){
         $('#file-input').trigger('click');
         setTimeout(function(){
-          var iframeW = document.createElement('iframeW');
+          var iframeW = document.getElementById('iframeW');
           var iframe = document.createElement('iframe');
           iframeW.appendChild(iframe);
           iframe.src ='../files/pdf.pdf';
