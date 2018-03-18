@@ -8,16 +8,12 @@ contract CoreDeployer {
     function getAddressFromCores(string keyvalue) constant returns (address){
         return cores[keyvalue];
     }
-    function CoreDeployer() public{
+    function CoreDeployer() public {
         owner = msg.sender;
     }
 
-    function createCore(string name,string symbol) public returns(Core){
+    function createCore(string name,string symbol) public {
         Core core = new Core(name,symbol);
-        cores[symbol]=core;
-        return core;
-    }
-    function hi() public returns(bool) {
-      return true;
+        cores[symbol] = core;
     }
 }
