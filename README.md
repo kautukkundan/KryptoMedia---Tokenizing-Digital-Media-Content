@@ -1,9 +1,9 @@
-We are converting digital media ( Music, PDF, videos, images etc ) into ERC-271 tokens so that the content can be used as "currency" on the blockchain network, thus enabling it to be traded, rented and sold directly to the consumer. We are also protecting the copyrights of the content by providing the content to the consumer through an isolated channel only.
+We are converting digital media ( Music, PDF, videos, images etc ) into ERC-721 tokens so that the content can be used as "currency" on the blockchain network, thus enabling it to be traded, rented and sold directly to the consumer. We are also protecting the copyrights of the content by providing the content to the consumer through an isolated channel only.
 
 
 ## How the token generation works?
 
-The content creator provides the digital media which is hashed using SHA3 and this hash is used as a metadata for ERC-271 token generation. This token is then used normally as any other cryptocoin. The price of the token depends upon the popularity of the content, thus helping the creator to earn profit. 
+The content creator provides the digital media which is hashed using SHA3 and this hash is used as a metadata for ERC-721 token generation. This token is then used normally as any other cryptocoin. The price of the token depends upon the popularity of the content, thus helping the creator to earn profit. 
 
 eg : An author publishes a novel, this novel is converted into a token with a unique name, symbol and characteristics. This token (novel) is traded over the network directly and the price of the token is set according to the demand-supply scenario.
 
