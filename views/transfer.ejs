@@ -154,7 +154,9 @@
 
 
 function on(sym,token_id,to){
-      transfer(to,sym,token_id)
+    $.get("http://localhost:8000/transfer", function(data, status){
+        console.log(data,status);
+    });
   }
   </script>
 </body>
