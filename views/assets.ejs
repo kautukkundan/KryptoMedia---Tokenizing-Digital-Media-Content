@@ -19,9 +19,9 @@
 
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 
-  <script src="./node_modules/web3/dist/web3-light.js"></script>
 
   <title>HASH</title>
+  <script src="./node_modules/web3/dist/web3-light.js"></script>
 
   <style>
     
@@ -119,105 +119,172 @@
 
         <br>
 
-        <div class="divider">CREATE ASSET</div>
+
+      
+
+      
+
+
+
+    <div class="divider">GET YOUR ASSETS</div>
 
         <div class="row">
 
           <!-- ROW STARTS -->
-
           <div class="col-4 text-left search">
-            <input type="search" class="search" name="token-id" placeholder="TOKEN-NAME" id="token-name">
+            <input type="search" class="search" name="to" placeholder="Asset Id" id="to0">
           </div>
           <div class="col-4 text-left search">
-            <input type="search" class="search" name="symbol" placeholder="TOKEN-SYMBOL" id="symbol">
-          </div>
-          
-            <br><br>
-            <button class="btn btn-primary" style="width: 10vw; margin: auto;"  onclick="createCore()">GO</button>
-          
-
-        </div>
-        <!-- ROW ENDS -->
-        <br><br>
-        <div class="divider">GENERATE YOUR ASSET</div>
-
-        <div class="row">
-
-          <!-- ROW STARTS -->
-          <div class="col-3 text-left search">
-            <input type="search" class="search" name="to" placeholder="TOKEN-SYMBOL" id="token-symbol">
-          </div>
-          <div class="col-3 text-left search">
-            <input type="search" class="search" name="token-id" placeholder="ASSET TYPE" id="asset-type">
-          </div>
-          <div class="col-3 text-left search">
-                <input type="search" class="search" name="token-id" placeholder="HASH" id="hash">
+                <input type="search" class="search" name="to" placeholder="Asset Symbol" id="symbol0">
               </div>
-          <div class="col-3 text-left search">
-            <input type="search" class="search" name="symbol" placeholder="MESSAGE" id="message">
-          </div>
+        </div>
+
+        <!-- ROW ENDS -->
+        <br><br>
+        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="assets()">GO</button>
+        <br><br>
+        
+        <div id="dynamic0" style="color:white;font-size: 1.5em;">
+
+            </div>
+            <br><br>
+      </div>
+    </div>
+
+    <div class="divider">TOTAL SUPPLY OF ASSETS</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+         
+              <div class="col-4 text-left search">
+                    <input type="search" class="search" name="to" placeholder="Asset Symbol" id="symbol1">
+                  </div>
+           
           
         </div>
 
         <!-- ROW ENDS -->
         <br><br>
-        <form id="uploadForm" enctype="multipart/form-data" method="post" action="/encrypt">
-          <input type="file" name="enc" />
-          <!-- <input type="submit" value="ENCRYPT File" name="submit"> -->
-        </form> 
+        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="totalSupply()">GO</button>
         <br><br>
-        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="subform(); generateAsset()">GO</button>
-        
-        <div id="dynamic" style="color:white;font-size: 1.5em;">
+        <div id="dynamic1" style="color:white;font-size: 1.5em;">
 
-        </div>
-        <br><br>
-        <div id="dynamic_2" style="color:white;font-size: 1.5em;">
+            </div>
+            <br><br>
+      </div>
 
+
+      <div class="divider">OWNER OF ASSET</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+          <div class="col-4 text-left search">
+                <input type="search" class="search" name="to" placeholder="Asset Id" id="to2">
+              </div>
+              <div class="col-4 text-left search">
+                    <input type="search" class="search" name="to" placeholder="Asset Symbol" id="symbol2">
+                  </div>
+           
+          
         </div>
 
         <!-- ROW ENDS -->
+        <br><br>
+        <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="ownerOf()">GO</button>
+        <br><br>
+        <div id="dynamic2" style="color:white;font-size: 1.5em;">
+
+            </div>
+            <br><br>
+      </div>
+    
+      <div class="divider">TOKENS OF OWNER</div>
+
+      <div class="row">
+
+        <!-- ROW STARTS -->
+        <div class="col-4 text-left search">
+              <input type="search" class="search" name="to" placeholder="Address" id="to3">
+            </div>
+            <div class="col-4 text-left search">
+                  <input type="search" class="search" name="to" placeholder="Asset Symbol" id="symbol3">
+                </div>
+         
+        
       </div>
 
       <!-- ROW ENDS -->
+      <br><br>
+      <button class="btn btn-primary" style="width: 10vw; margin: auto;" onclick="tokensOfOwner()">GO</button>
+      <br><br>
+      <div id="dynamic3" style="color:white;font-size: 1.5em;">
+
+        </div>
+        <br><br>
+    </div>
+  
 
     </div>
 
-    <!-- MAIN BODY ENDS -->
+    <!-- ALL MODALS -->
+
+    <div class="modal fade" id="Microsoft" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="padding: 0">
+        <div class="modal-content">
+          <div class="modal-body">
+
+            <h4 class="text-center">Microsoft Campus Hackathon 1.0</h4>
+            <div class="text-center"> <i class="fa fa-clock-o" aria-hidden="true"></i>Feb 3, 2018 - Feb 4, 2018</div>
+            <div class="text-center">
+              <i class="fa fa-map-marker" aria-hidden="true" style="padding: 5px"></i>
+              Galgotias College of Engineering and Technology, Greater Noida
+            </div>
+            <br>
+
+            <img src="https://hacksociety.tech/assets/img/events/31.png" style="max-width: 100%">
+
+            <br>
+
+            <p style="margin-top: 2vh">
+              We are organizing the first edition of Microsoft Campus Hackathon at Galgotias College of Engineering and Technology. MCH Hack 1.0 is a platform for developers, designers and inventors to code, design and hack some amazing solution for real-world problem. Whether we are the first time coders or a pro come join us, build something amazing. We will provide you food, swags and fun to have an amazing weekend. We can not wait to see what you build at the hackathon.
+            </p>
+
+            <p>
+              ☻ Log on to our website http://mchgalgotias.tech for more details about theme.
+            </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Visit link</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
-  <!-- ALL MODALS -->
 
-</div>
-
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-  
-
-function createAsset() { 
-  var symbol = document.getElementById('symbol').value
-  var name = document.getElementById('token-name').value
-  // $.get("http://localhost:8000/createAsset/"+symbol+"/"+name, function(data, status){
-  //        console.log(data,status);
-  //        console.log(symbol+name);
-  //   });
-  location.href = "http://localhost:8000/createAsset/"+symbol+"/"+name
-  };
-    // window.redirect("http://localhost:8000/createAsset/"+symbol+"/"+name);
-    //location.href="http://localhost:8000/createAsset/"+symbol+"/"+name;
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    var to=document.getElementById('to').value
+    var sym=document.getElementById('symbol').value
+    var token_id=document.getElementById('token-id').value
+    var transfer= require ('../contractFunctions.js') ;
 
 
-  function subform(){
-    $('#uploadForm').submit()
+function on(sym,token_id,to){
+    $.get("http://localhost:8000/transfer/"+sym+"/"+token_id+"/"+to, function(data, status){
+        console.log(data,status);
+    });
   }
-</script>
+  </script>
   <script>
       if (typeof web3 !== 'undefined') {
           web3 = new Web3(web3.currentProvider);
@@ -657,55 +724,49 @@ function createAsset() {
               "type": "event"
           }
       ]);
-      function createCore() {
 
-          var _symbol = document.getElementById('symbol').value
-          var name = document.getElementById('token-name').value
-          console.log("symbol is "+_symbol+"bame is"+name);
-          CoreDeployer.createCore(name,_symbol, {gas: '6000000'}, function (err, result) {
-              if(err){
-                  console.log(err);
-              }else {
-                  console.log("blah"+result);
-                  var dynamic = document.getElementById('dynamic');
-                  dynamic.innerHTML = "Contract's address is : "+result;
-              }
-          })
-          CoreDeployer.getAddressFromCores(_symbol, function (err, res) {
-              if(err){
+      function assets(){
+          var sym = document.getElementById('symbol0').value;
+          var token_id=document.getElementById('to0').value;
+          CoreDeployer.getAddressFromCores(sym, function (err, res) {
+              if (err) {
                   console.log(err);
               } else {
-                  console.log(res);
+                  console.log("address is " + res);
+                  var CoreInstance = CoreContract.at(res);
+                  console.log("coreinstance is " + CoreInstance);
+                  CoreInstance.assets(token_id, function (err, r) {
+                      if (err) {
+                          console.log(err);
+                      }
+                      else {
+                          console.log("rikki's result : "+r);
+                          var dynamic0 = document.getElementById("dynamic0");
+                          dynamic0.innerHTML = "Asset's properties are : "+r;
+                      }
+
+                  })
               }
           })
       }
-      CoreDeployer.getAddressFromCores("bob", function (err, res) {
-          if(err){
-              console.log(err);
-          } else {
-              console.log(res);
-          }
-      })
-      function generateAsset() {
-          var token_symbol=document.getElementById('token-symbol').value
-          var hash=document.getElementById('hash').value
-          var message=document.getElementById('message').value
-          var asset_type=document.getElementById('asset-type').value
-          CoreDeployer.getAddressFromCores(token_symbol, function (err, res) {
-              if(err){
+      function totalSupply(){
+          var sym = document.getElementById('symbol1').value;
+          CoreDeployer.getAddressFromCores(sym, function (err, res) {
+              if (err) {
                   console.log(err);
               } else {
-                  console.log("address is "+res);
+                  console.log("address is " + res);
                   var CoreInstance = CoreContract.at(res);
-                  console.log("coreinstance is "+CoreInstance);
-                  CoreInstance._generateAssets(message,hash,asset_type,function (err,r) {
-                      if(err){
+                  console.log("coreinstance is " + CoreInstance);
+                  CoreInstance.totalSupply(function (err, r) {
+                      if (err) {
                           console.log(err);
                       }
-                      else{
-                          console.log(r);
-                          var dynamic_2 = document.getElementById("dynamic_2");
-                          dynamic_2.innerHTML = "The Transaction hash is : "+r;
+                      else {
+                          console.log("rikki's result : "+r);
+                          var dynamic1 = document.getElementById("dynamic1");
+                          dynamic1.innerHTML = "Total No of Assets are : "+r;
+                      
                       }
 
                   })
@@ -713,9 +774,56 @@ function createAsset() {
           })
       }
 
+      function ownerOf(){
+          var sym = document.getElementById('symbol2').value;
+          var token_id=document.getElementById('to2').value;
+          CoreDeployer.getAddressFromCores(sym, function (err, res) {
+              if (err) {
+                  console.log(err);
+              } else {
+                  console.log("address is " + res);
+                  var CoreInstance = CoreContract.at(res);
+                  console.log("coreinstance is " + CoreInstance);
+                  CoreInstance.ownerOf(token_id, function (err, r) {
+                      if (err) {
+                          console.log(err);
+                      }
+                      else {
+                          console.log("rikki's result : "+r);
+                          var dynamic2 = document.getElementById("dynamic2");
+                          dynamic2.innerHTML = "Owner of the Asset is : "+r;
+                      
+                      }
+
+                  })
+              }
+          })
+      }
+      function tokensOfOwner(){
+          var sym = document.getElementById('symbol3').value;
+          var token_id=document.getElementById('to3').value;
+          CoreDeployer.getAddressFromCores(sym, function (err, res) {
+              if (err) {
+                  console.log(err);
+              } else {
+                  console.log("address is " + res);
+                  var CoreInstance = CoreContract.at(res);
+                  console.log("coreinstance is " + CoreInstance);
+                  CoreInstance.tokensOfOwner(token_id, function (err, r) {
+                      if (err) {
+                          console.log(err);
+                      }
+                      else {
+                          console.log("rikki's result : "+r);
+                          var dynamic3 = document.getElementById("dynamic3");
+                          dynamic3.innerHTML = "Tokens of Owner are : "+r;
+                      
+                      }
+
+                  })
+              }
+          })
+      }
   </script>
-
-
-
 </body>
-</html> 
+</html>

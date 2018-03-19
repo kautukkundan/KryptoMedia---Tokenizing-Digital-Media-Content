@@ -27,7 +27,7 @@ app.post("/encrypt", upload.single('enc'), function (req, res, next) {
     console.log("wow");
     encrypt(file, org);
   }, 3000);
-  res.redirect('http://localhost:3000/up')
+  // res.redirect('http://localhost:3000/up')
 });
 
 var data;
@@ -73,7 +73,9 @@ app.get('/up',function (req, res) {
 app.get('/transfer',function (req, res) {
   res.render("transfer")
 });
-
+app.get('/assets',function(req, res){
+  res.render("assets")
+});
 app.listen(3000,function () {
  console.log("HINT started on port 3000");
 });
