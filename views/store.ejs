@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Font awesome icons -->
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- RALEWAY FONT -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,300,400,500" rel="stylesheet">
+
+  <!-- Roboto font -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,600" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+
+  <title>HASH</title>
+
+</head>
+
+<style type="text/css">
+</style>
+
+<body>
+
+  <div class="page-container">
+
+    <div class="row">
+
+      <!-- SIDENAV BEGINS -->
+
+
+      <div class="col-lg-2 sidenav">
+        <div class="title">
+          <a href="/store">MARKET</a>
+        </div>
+        <div class="title">
+          <a href="/access">SHOWTIME</a>
+        </div>
+        <div class="title">
+          <a href="/up">UPLOAD</a>
+        </div>
+        <div class="title">
+            <a href="/transfer">TRANSFER</a>
+          </div>
+      </div>
+
+      <!-- SIDENAV ENDS -->
+
+
+
+
+
+
+      <!-- MAIN BODY BEGINS -->
+
+
+      <div class="offset-lg-2 col-lg-10 main-body">
+
+
+        <div class="row">
+          <div class="title col-4">
+            KRYTPO MEDIA
+          </div>
+
+          <div class="col-8 text-right search">
+            <input type="search" class="search" name="search" placeholder="search" id="search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <div class="card top-card">
+              <div class="card-body">
+                <div class="top-card-title text-center text-white"><strong>Digital Media Tokens</strong></div>
+                <br>
+                <div class="top-card-body">
+                  Convert digital media ( Music, PDF, videos, images etc ) into ERC-721 tokens so that the content can be used as "currency" on the blockchain network, thus enabling it to be traded, rented and sold directly to the consumer.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br><br>
+
+        <div class="divider">SELL ASSET</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+
+          <div class="col-4 text-left search">
+            <input type="search" class="search" name="token-id" placeholder="TOKEN-ID" id="token-id">
+          </div>
+          <div class="col-4 text-left search">
+            <input type="search" class="search" name="symbol" placeholder="PRICE" id="price">
+          </div>
+          
+            <br><br>
+            <button class="btn btn-primary" style="width: 10vw; margin: auto;"  onclick="sellAsset(token-id, price)">GO</button>
+          
+
+        </div>
+        <br><br>
+        <div class="divider">BUY ASSET</div>
+
+        <div class="row">
+        <div class="col-4 text-left search">
+            <input type="search" class="search" name="token_id" placeholder="TOKEN-ID" id="token-id">
+          </div>
+          
+            <br><br>
+            <button class="btn btn-primary" style="width: 10vw;margin: auto;"  onclick="buyAsset(token_id)">GO</button>
+          
+
+        </div>
+        <br><br>
+        <div class="title col-4">
+            EXPLORE
+          </div>
+
+        <div class="divider">MUSIC</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('../images/icons/music1.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('../images/icons/music2.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('../images/icons/music2.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('../images/icons/music1.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+
+        <!-- ROW ENDS -->
+        
+        <div class="divider">MOVIES</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/d1.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ROW ENDS -->
+
+
+        </div>
+
+        <div class="divider">BOOKS</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- ROW ENDS -->
+
+
+        </div>
+
+        <div class="divider">GAMES</div>
+
+        <div class="row">
+
+          <!-- ROW STARTS -->
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-2 card-hack" style="border-radius: 0; margin-bottom: 4vh" data-toggle="modal" data-target="#Microsoft">
+            <div class="card" style="border: none; padding: 0;">
+              <div class="card-body text-center each-card" style="background: url('./images/mobies/1d.jpg'); height: 30vh">
+              </div>
+            </div>
+          </div>
+
+
+
+          <!-- ROW ENDS -->
+
+
+        </div>
+
+
+
+
+
+      </div>
+
+      <!-- MAIN BODY ENDS -->
+
+    </div>
+
+
+    <!-- ALL MODALS -->
+
+    <div class="modal fade" id="Microsoft" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="padding: 0">
+        <div class="modal-content">
+          <div class="modal-body">
+
+            <h4 class="text-center">Microsoft Campus Hackathon 1.0</h4>
+            <div class="text-center"> <i class="fa fa-clock-o" aria-hidden="true"></i>Feb 3, 2018 - Feb 4, 2018</div>
+            <div class="text-center">
+              <i class="fa fa-map-marker" aria-hidden="true" style="padding: 5px"></i>
+              Galgotias College of Engineering and Technology, Greater Noida
+            </div>
+            <br>
+
+            <img src="https://hacksociety.tech/assets/img/events/31.png" style="max-width: 100%">
+
+            <br>
+
+            <p style="margin-top: 2vh">
+              We are organizing the first edition of Microsoft Campus Hackathon at Galgotias College of Engineering and Technology. MCH Hack 1.0 is a platform for developers, designers and inventors to code, design and hack some amazing solution for real-world problem. Whether we are the first time coders or a pro come join us, build something amazing. We will provide you food, swags and fun to have an amazing weekend. We can not wait to see what you build at the hackathon.
+            </p>
+
+            <p>
+              ☻ Log on to our website http://mchgalgotias.tech for more details about theme.
+            </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Visit link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    var token_id=document.getElementById('token-id').value
+    var price=document.getElementById('price').value
+    function sellAsset(token_id, price){
+
+    }
+    var tokenIdToBuy=document.getElementById('token_id').value
+    function buyAsset(tokenIdToBuy){
+
+    }
+  </script>
+</body>
+</html> 
